@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Holdings</title>
+    <p> </p>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(-215deg, #000428, #004e92);
+            color: #fff;
+            text-align: center;
+            padding: 20rem 3rem;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 7rem;
+            font-weight: bold;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.9);
+            text-align: center;
+            padding: 3rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: color 0.3s, transform 0.3s;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            color: #ffb800;
+            transform: scale(1.1);
+        }
+
+        .hero {
+            background: url('https://via.placeholder.com/1920x900') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 3rem;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h2 {
+            font-size: 10rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 3rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            max-width: 10000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero::after {
+            content: '\221E';
+            font-size: 10rem;
+            color: rgba(255, 255, 255, 0.05);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .section {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: #111;
+            margin-bottom: 3rem;
+        }
+
+        .section h3 {
+            font-size: 13rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .service-box {
+            background: #222;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .service-box:hover {
+            background: #ffb800;
+            color: #000;
+            transform: scale(1.05);
+        }
+
+        .service-box h4 {
+            font-size: 1.5rem;
+        }
+
+        .service-box p {
+            font-size: 1rem;
+            display: none;
+            margin-top: 1rem;
+        }
+
+        .service-box.active p {
+            display: block;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #000428, #004e92);
+            color: #fff;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            text-align: center;
+            padding: 3rem;
+        }
+    </style>
+    <script>
+        function toggleService(service) {
+            service.classList.toggle('active');
+            // Toggle the extended description for Aadi and Adithya
+            const extraDescription = service.querySelector('.extra-description');
+            if (extraDescription) {
+                extraDescription.style.display = extraDescription.style.display === 'none' ? 'block' : 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#team">Meet the Team</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <header>
+        <h1>Infinite Holdings</h1>
+        <h2>Investment Reimagined.</h2>
+    </header>
+
+    <section class="hero">
+        <h1>Infinite Possibilities, Infinite Success</h1>
+        <p>Discover how Infinite Holdings transforms investments into groundbreaking opportunities.</p>
+    </section>
+
+    <section class="section" id="about">
+        <h1>About Us</h1>
+        <p>At Infinite Holdings, we believe in unlocking limitless potential through strategic investment management and venture capitalism. Valued at ~$16,000, our firm is built on expert financial planning, data-driven insights, and personalized solutions tailored to help individuals and their SMBs in and around the greater Lafayette area achieve long-term success.
+
+            With a PEC of 90%, a growing $16k starting valuation—data projecting ~$50k by the end of this fiscal year, 54.2% capital efficiency, and an average employee pay of $28.57/hr we can assure you that Infinite is built, and will continue being built, on expert market insights, strategic planning, and hyperpersonalized financial solutions tailored to every stage of your wealth journey.</p>
+    </section>
+
+    <section class="section" id="services">
+        <h1>Our Services</h1>
+        <div class="service-container">
+            <div class="service-box" onclick="toggleService(this)">
+                <h4>Investment Strategy</h4>
+                <p>We provide in-depth market analysis and strategic insights to maximize investment returns.</p>
+            </div>
+            <div class="service-box" onclick="toggleService(this)">
+                <h4>Business Growth</h4>
+                <p>Partnering with businesses to accelerate expansion and drive sustainable success.</p>
+            </div>
+            <div class="service-box" onclick="toggleService(this)">
+                <h4>Capital Management</h4>
+                <p>Expert capital allocation and management to optimize financial performance.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="team">
+        <h1>Meet the Team</h1>
+        <div class="service-container">
+            <div class="service-box" onclick="toggleService(this)">
+                <h4>Adithya Balaji, CEO</h4>
+                <img src="balaji.png" alt="Adithya Balaji" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+                <p>Chief Executive Officer<br>Current Student at Purdue University</p>
+                <p class="extra-description" style="display: none;">
+                    Currently studying Economics and Marketing at Purdue University, my academic insights complement the various roles I have taken on, fostering a unique blend of economic thinking and financial acumen.
+                </p>
+            </div>
+            <div class="service-box" onclick="toggleService(this)">
+                <h4>Aadi Awasthi, CIO</h4>
+                <img src="IMG_3149.jpg" alt="Aadi Awasthi" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+                <p>Chief Information Officer<br>Student at the University of California, San Diego</p>
+                <p class="extra-description" style="display: none;">
+                    Hardworking student that aims to use his multifaceted experiences and rigorous academic background to explore the intersection of healthcare, technology, and business. Currently pursuing a degree in Cell and Molecular Biology at the University of California, San Diego with interests to pick up minors in tech and business.
+                </p>
+            </div>
+           
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h1>Contact Us</h1>
+        <p>Email: contact@infiniteholdings.com | Phone: (860)-997-7106 </p>
+    </section>
+
+    <footer>
+        <pad> </pad>
+        <p>&copy; 2025 Infinite Holdings. All rights reserved.</p>
+    </footer>
+</body>
+</html>
